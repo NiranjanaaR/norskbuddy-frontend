@@ -148,7 +148,7 @@ const speak = async (messageId, text) => {
       audio = new Audio(cachedUrl);
     } else {
       // ✅ 2. Otherwise fetch from backend
-      const res = await fetch("http://127.0.0.1:8000/tts", {
+      const res = await fetch("https://norskbuddy-backend.onrender.com/tts", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
@@ -222,7 +222,7 @@ const speak = async (messageId, text) => {
   setIsThinking(true);
 
   try {
-    const res = await fetch("http://127.0.0.1:8000/chat", {
+    const res = await fetch("https://norskbuddy-backend.onrender.com/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -274,7 +274,7 @@ const speak = async (messageId, text) => {
   setLoading(true);
 
   try {
-    const res = await fetch("http://127.0.0.1:8000/chat", {
+    const res = await fetch("https://norskbuddy-backend.onrender.com/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -524,7 +524,7 @@ const speak = async (messageId, text) => {
         setLoading(true);
 
         try {
-          const res = await fetch("http://127.0.0.1:8000/chat", {
+          const res = await fetch("https://norskbuddy-backend.onrender.com/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
