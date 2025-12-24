@@ -282,6 +282,16 @@ body {
   width: 260px;
   flex-shrink: 0;
 }
+@media (max-width: 768px) {
+.sidebar-container::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+}
+
 
 /* close button inside sidebar (only visible on mobile) */
 .sidebar-close-btn {
@@ -314,6 +324,7 @@ body {
     max-width: 100%;
   }
 
+  /* AUTH */
   .auth-root {
     flex-direction: column;
   }
@@ -333,7 +344,7 @@ body {
     box-shadow: none;
   }
 
-  /* main layout: stack vertically */
+  /* MAIN LAYOUT */
   .main-body {
     flex-direction: column;
     padding: 12px;
@@ -344,14 +355,31 @@ body {
     width: 100% !important;
   }
 
-  /* show header "Samtaler" button on mobile */
+  /* HEADER */
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .main-header > div:last-child {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .main-logout-btn {
+    width: 100%;
+  }
+
+  /* SIDEBAR TOGGLE BUTTON */
   .sidebar-toggle-header {
     display: inline-flex;
     align-items: center;
     gap: 4px;
   }
 
-  /* sidebar becomes a sliding drawer like ChatGPT */
+  /* SIDEBAR DRAWER */
   .sidebar-container {
     position: fixed;
     top: 0;
@@ -370,9 +398,28 @@ body {
     transform: translateX(0);
   }
 
+  .sidebar-container::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: -1;
+  }
+
   .sidebar-close-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+  }
+
+  /* CHAT INPUT */
+  .chat-input-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .chat-input-row button {
+    width: 100%;
   }
 }

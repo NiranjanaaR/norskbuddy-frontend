@@ -653,13 +653,8 @@ const speak = async (messageId, text) => {
             pointerEvents: secondsLeft <= 0 ? "none" : "auto",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              gap: 6,
-              marginBottom: 6,
-            }}
-          >
+          <div className="chat-input-row">
+
             <button
               type="button"
               onClick={handleExplainInEnglish}
